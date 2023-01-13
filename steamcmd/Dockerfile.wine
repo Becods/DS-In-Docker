@@ -6,7 +6,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 ENV DISPLAY=:0 \
 	TTYD_PORT=7681 \
-    WINEARCH=win64 \
+	WINEARCH=win64 \
 	TZ="Asia/Shanghai" \
 	STEAMAPP="steamcmd" \
 	STEAMCMDDIR="/usr/share/steamcmd"
@@ -18,7 +18,7 @@ RUN set -x \
  && apt install -y --no-install-recommends --no-install-suggests \
 		lib32stdc++6 lib32gcc-s1 wget ca-certificates \
 		libsdl2-2.0-0:i386 lib32z1 screen procps \
-        xvfb wine wine32 wine64 \
+		xvfb wine wine32 wine64 \
  && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
  && echo $TZ > /etc/timezone \
  && mkdir -p "${STEAMCMDDIR}" \

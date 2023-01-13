@@ -1,11 +1,11 @@
-FROM the-forest:building
+FROM becod/dedicated-server:the-forest
 
 RUN "${STEAMCMDDIR}/steamcmd.sh" \
-        +login anonymous \
-        +@sSteamCmdForcePlatformType windows \
-        +force_install_dir "${STEAMAPPDIR}" \
-        +app_update "${STEAMAPPID}" \
-        validate \
-        +quit
+	+login anonymous \
+	+@sSteamCmdForcePlatformType windows \
+	+force_install_dir "${STEAMAPPDIR}" \
+	+app_update "${STEAMAPPID}" \
+	validate \
+	+quit
 
 CMD [""]

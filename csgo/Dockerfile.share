@@ -1,9 +1,10 @@
-FROM csgo-server:building
+FROM becod/dedicated-server:csgo
 
 RUN "${STEAMCMDDIR}/steamcmd.sh" \
-		+login anonymous \
-		+force_install_dir "${STEAMAPPDIR}" \
-		+app_update "${STEAMAPPID}" \
-		+quit
+	+login anonymous \
+	+force_install_dir "${STEAMAPPDIR}" \
+	+app_update "${STEAMAPPID}" \
+	validate \
+	+quit
 
 CMD [""]

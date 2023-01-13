@@ -2,7 +2,7 @@ FROM becod/steamcmd:wine
 
 ENV	STEAMAPP=The-Forest \
 	STEAMAPPID=556450 \
-    STEAMAPPDIR="/${STEAMAPP}-dedicated" \
+	STEAMAPPDIR="/${STEAMAPP}-dedicated" \
 	FDS_CONFIG_PATH="/data/config" \
     FDS_CONFIG_FILE="config.cfg" \
     FDS_SAVE_PATH="/data/saves" \
