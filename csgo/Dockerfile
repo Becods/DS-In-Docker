@@ -1,0 +1,37 @@
+FROM becod/steamcmd
+
+ENV STEAMAPPID=740 \
+	STEAMAPP=csgo \
+    STEAMAPPDIR="/${STEAMAPP}-dedicated" \
+	SRCDS_TICKRATE=128 \
+	SRCDS_PORT=27015 \
+	SRCDS_TV_PORT=27020 \
+	SRCDS_CLIENT_PORT=27005 \
+	SRCDS_NET_PUBLIC_ADDRESS="0" \
+	SRCDS_IP="0.0.0.0" \
+	SRCDS_MAXPLAYERS=12 \
+	SRCDS_TOKEN=0 \
+	SRCDS_RCONPW="Please-Change-Me-Imitation-Triage7" \
+	SRCDS_PW="Please-Change-Me-Overthrow-Footwork2" \
+	SRCDS_STARTMAP="de_dust2" \
+	SRCDS_REGION=3 \
+	SRCDS_MAPGROUP="mg_active" \
+	SRCDS_GAMETYPE=0 \
+	SRCDS_GAMEMODE=1 \
+	SRCDS_HOSTNAME="New \"${STEAMAPP}\" Server" \
+	SRCDS_WORKSHOP_START_MAP=0 \
+	SRCDS_HOST_WORKSHOP_COLLECTION=0 \
+	SRCDS_WORKSHOP_AUTHKEY="" \
+	ADDITIONAL_ARGS=""
+
+COPY entrypoint.sh /entrypoint.sh
+
+RUN chmod +x "/entrypoint.sh"
+
+WORKDIR ${STEAMAPPDIR}
+
+VOLUME ${STEAMAPPDIR}
+
+ENTRYPOINT ["bash", "/entrypoint.sh"]
+
+CMD ["dl"]
