@@ -32,7 +32,6 @@ elif [[ $1 == "game" ]];then
 		+host_workshop_collection "${SRCDS_HOST_WORKSHOP_COLLECTION}" \
 		+workshop_start_map "${SRCDS_WORKSHOP_START_MAP}" \
 		-authkey "${SRCDS_WORKSHOP_AUTHKEY}" \
-		-nomaster \
 		"${ADDITIONAL_ARGS}"
 else
 	sed -i "s/sleep 1/#sleep 1/g" "${STEAMAPPDIR}/srcds_run"
